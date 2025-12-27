@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;600;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        height: 100vh;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .slider-container {
+        width: 250px; /* Adjust the width of the sliding bar as needed */
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Align to the left */
+        background-color: #000; /* Change background color to black */
+        color: #fff;
+        padding: 20px;
+        transition: background-color 0.3s; /* Transition for background color changes */
+        border-right: 2px solid #ccc;
+        position: fixed; /* Set the position to fixed */
+        top: 0; /* Stick to the top */
+        bottom: 0; /* Extend to the bottom */
+        overflow-y: auto; 
+    }
+
+    .welcome-message {
+        font-size: 34px;
+        color: #000; /* Set text color to black */
+        margin-left: 30px;
+        margin-top: 40px; /* Add margin to separate the message from the left edge */
+    }
+
+    .officials-text {
+        font-size: 24px;
+        margin-top: 40px; /* Increase margin to separate text from options and image */
+        margin-bottom: 20px; 
+        transition: color 0.3s;
+        /* Add margin to separate text from options and image */
+    }
+
+    .options-slider {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the options horizontally */
+        margin-top: 20px;
+      
+    }
+
+    .option {
+        width: 200px;
+        padding: 15px; /* Increase padding for options */
+        background-color: #070707;
+        margin-bottom: 15px; /* Increase margin between options */
+        border-radius: 8px;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .option:hover {
+        background-color: #ddd;
+    }
+
+    .logo-img {
+        max-width: 100%; /* Ensure the image doesn't exceed its container */
+        max-height: 100px; /* Set a maximum height for the image */
+        margin-bottom: 30px;
+        margin-left: 50px; /* Increase margin between image and options */
+    }
+    .option img {
+        max-width: 20px;
+        margin-right: 10px;
+    }
+    .option a {
+        text-decoration: none !important; /* Remove the default underline for links */
+        color: #fff !important; 
+    }
+    .dark-theme .slider-container {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .dark-theme .slider-container .options-slider {
+        background-color: #fff;
+    }
+
+    .dark-theme .option {
+        background-color: #070707;
+        color: #fff;
+    }
+
+    .dark-theme .background-page {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .light-theme .slider-container {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .light-theme .slider-container .options-slider {
+        background-color: #000;
+    }
+
+    .light-theme .option {
+        background-color: #ccc;
+        color: #000;
+    }
+
+    .light-theme .background-page {
+        background-color: #fff;
+        color: #000;
+    }
+    .background-page {
+        flex: 1;
+        padding: 60px;
+        transition: background-color 0.3s, color 0.3s;
+        margin-left: 250px; /* Smooth transition for background and text color changes */
+    }
+</style>
+<title>Higher Education Officials Settings </title>
+</head>
+<body>
+
+<div class="slider-container">
+<div class="officials-text"><b>Authorities &<br> Officials</b><br></div>
+<img class="logo-img" src="l1.jpg" alt="Logo Image">
+<div class="options-slider">
+    <div class="option"><img src="dash2.png" alt="Option Image"><a href="beo1.html"></a> Dashboard</div>
+    <div class="option"><img src="gen1.png" alt="Option Image"><a href="genr1.html">General</a></div>
+    <div class="option"><img src="ch1.png" alt="Option Image"><a href="chpass.html">Change Password</a></div>
+
+    <div class="option" id="darkThemeOption"><img src="dark1.png" alt="Option Image">Dark Theme</div>
+    <div class="option" id="lightThemeOption"><img src="light1.png" alt="Option Image">Light Theme</div>
+    <div class="option"><img src="log1.png" alt="Option Image">Logout</div>
+    <!-- Add more options as needed -->
+</div>
+</div>
+
+<div class="background-page">
+<!-- Content of the right side background page goes here -->
+<h2><b>Settings</b></h2>
+<p></p>
+</div>
+
+<script>
+
+const darkThemeOption = document.getElementById('darkThemeOption');
+const lightThemeOption = document.getElementById('lightThemeOption');
+
+
+darkThemeOption.addEventListener('click', function () {
+    // Apply dark theme
+    document.body.classList.remove('light-theme');
+    document.body.classList.add('dark-theme');
+});
+
+lightThemeOption.addEventListener('click', function () {
+    // Apply light theme
+    document.body.classList.remove('dark-theme');
+    document.body.classList.add('light-theme');
+});
+</script>
+
+
+</body>
+</html>
